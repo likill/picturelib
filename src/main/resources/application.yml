@@ -1,0 +1,56 @@
+#服务器配置，端口号默认8080，只要8000以上大多数即可
+server:
+  port: 8123
+  servlet:
+    context-path: /api #localhost:8123/api
+    session:
+      cookie:
+        max-age: 2592000
+spring:
+  application:
+    name: zhupicture
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver #调用数据库驱动
+    url: jdbc:mysql://localhost:3306/zhupicture
+    username: root
+    password: 123456
+  servlet:
+    multipart:
+      max-file-size: 10MB
+  profiles:
+    active: local
+  # Redis 配置
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    timeout: 5000
+  session:
+    store-type: redis
+    timeout: 2592000
+
+mybatis-plus:
+  # mybatis配置 一般将所有的有关数据库的操作放在mapper文件中
+  configuration:
+    # MyBatis 配置
+    map-underscore-to-camel-case: false
+    # 仅仅在开发环境下输出日志文件
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    # 全局配置
+    db-config:
+      # 逻辑删除
+      logic-delete-field: isDeleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+# 接口文档配置 一般将所有的有关接口的操作放在controller文件中
+knife4j:
+  enable: true
+  openapi:
+    title: 接口文档
+    version: 1.0
+    group:
+      default:
+        api-rule: package
+        api-rule-resources:
+          - com.jiaxin.zhupicture.controller
