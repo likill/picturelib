@@ -1,0 +1,30 @@
+# CLIP + Milvus 多模态以文搜图 Python 依赖
+# 基于 Zilliz 博客: CLIP+Milvus，多模态embedding如何用于以文搜图
+
+# 向量数据库客户端
+pymilvus>=2.5.0
+
+# Chinese-CLIP 中文多模态嵌入模型
+cn_clip
+
+# PyTorch (通常 cn_clip 会自动安装，但指定版本确保兼容性)
+torch>=2.0.0
+
+# 图片处理
+Pillow>=9.0.0
+
+# Web 服务
+fastapi>=0.100.0
+uvicorn>=0.23.0
+
+# HTTP 客户端 (用于调用外部 API)
+requests>=2.31.0
+
+# 进度条
+tqdm
+
+# MySQL 客户端 (用于从 zhupicture 数据库读取图片)
+mysql-connector-python>=8.0.0
+
+# 向量相似度计算 (备用，如果 pymilvus 需要)
+numpy>=1.21.0

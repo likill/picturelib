@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:zilliz.com.cn)",
+      "WebSearch",
+      "WebFetch(domain:milvus.io)",
+      "Bash(curl -L -s \"https://zilliz.com.cn/blog/CLIP-Milvus-Multimodal-Embedding-Image-Search\" -o /tmp/blog_content.html)",
+      "Read(//tmp/**)"
+    ]
+  }
+}

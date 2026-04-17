@@ -79,8 +79,6 @@ public abstract class PictureUploadTemplate {
                 // 封装压缩图返回结果
                 return buildResult(originFilename, compressedCiObject, thumbnailCiObject);
             }
-
-
             // 封装原图返回结果
             return buildResult(originFilename, file, uploadPath, imageInfo);
         } catch (Exception e) {
